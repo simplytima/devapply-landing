@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,21 +8,25 @@ const Navbar = () => {
     { label: 'Features', href: '#features' },
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Pricing', href: '#pricing' },
+    { label: 'Testimonials', href: '#testimonials' },
   ];
+
+  // Your DevApply app URL
+  const APP_URL = import.meta.env.VITE_APP_URL || 'https://devapply-alpha.vercel.app';
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <div className="w-8 h-8 bg-gradient-to-r from-violet-600 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">D</span>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
               DevApply
             </span>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -36,13 +40,13 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="/login"
+              href={`${APP_URL}/login`}
               className="text-violet-400 hover:text-violet-300 transition-colors text-sm"
             >
               Sign In
             </a>
             <a
-              href="/register"
+              href={`${APP_URL}/register`}
               className="bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
             >
               Get Started
@@ -72,14 +76,14 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="/login"
+              href={`${APP_URL}/login`}
               className="text-violet-400 hover:text-violet-300 transition-colors text-sm"
               onClick={() => setIsOpen(false)}
             >
               Sign In
             </a>
             <a
-              href="/register"
+              href={`${APP_URL}/register`}
               className="bg-gradient-to-r from-violet-600 to-purple-600 px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity text-center"
               onClick={() => setIsOpen(false)}
             >

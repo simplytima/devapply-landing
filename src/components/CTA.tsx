@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const CTA = () => {
+  const APP_URL = 'https://devapply-alpha.vercel.app';
+
   return (
     <section className="py-20 px-4 max-w-4xl mx-auto">
       <motion.div
@@ -19,7 +21,7 @@ const CTA = () => {
           Start for free – no credit card required.
         </p>
         <a
-          href="/register"
+          href={`${APP_URL}/register`}
           className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600 px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
         >
           Start Tracking Now
